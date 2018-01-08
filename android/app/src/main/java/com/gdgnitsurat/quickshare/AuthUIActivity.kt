@@ -10,6 +10,8 @@ import com.firebase.ui.auth.ErrorCodes
 import com.firebase.ui.auth.IdpResponse
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import java.util.*
 
 
@@ -54,6 +56,7 @@ class AuthUIActivity : AppCompatActivity() {
             if (resultCode == Activity.RESULT_OK) {
                 // Successfully signed in
                 showToast(getString(R.string.sign_in_successful))
+                addUserToFirebaseDatabase()
             } else {
                 // Sign in failed
 
@@ -79,4 +82,13 @@ class AuthUIActivity : AppCompatActivity() {
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
+
+    private fun addUserToFirebaseDatabase() {
+
+        val database: FirebaseDatabase = FirebaseDatabase.getInstance()
+        val databaseRef: DatabaseReference = database.getReference()
+        val user = user(firebaseAuth.currentUser?.displayName, firebaseAuth.currentUser?.email)
+        databaseRef.child("users").child(firebaseAuth.currentUser?.uid).setValue(user)
+    }
+
 }
