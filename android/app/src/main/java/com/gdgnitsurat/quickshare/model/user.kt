@@ -1,4 +1,4 @@
-package com.gdgnitsurat.quickshare
+package com.gdgnitsurat.quickshare.model
 
 /**
  * Created by yolo on 6/1/18.
