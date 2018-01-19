@@ -1,4 +1,3 @@
-
 var config = {
     apiKey: "AIzaSyCfjghxYB6x5312g9W-A5bfAPusD_VeMX8",
     authDomain: "quickshare-web.firebaseapp.com",
