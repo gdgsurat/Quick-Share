@@ -1,0 +1,25 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "QuickShare-WebApp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wdlsvnit/Quick-Share.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wdlsvnit/Quick-Share/issues"
+  },
+  "homepage": "https://github.com/wdlsvnit/Quick-Share#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "firebaseui": "^2.5.1",
+    "hbs": "^4.0.1"
+  }
+}
